@@ -111,7 +111,14 @@ input:focus{outline:0;border-color:var(--b);box-shadow:0 0 0 3px rgba(47,134,255
 
 <script type="module">
 /* ===== 1. PASTE THE SAME FIREBASE WEB CONFIG YOU USE IN admin.html ===== */
-const FILE_CFG={apiKey:"",authDomain:"",projectId:"",storageBucket:"",messagingSenderId:"",appId:""};
+const firebaseConfig = {
+  apiKey: "AIzaSyCfv54S1FL9ofyd9muz9PK_Eba4FYPTTyU",
+  authDomain: "nexora-digi-solutions.firebaseapp.com",
+  projectId: "nexora-digi-solutions",
+  storageBucket: "nexora-digi-solutions.firebasestorage.app",
+  messagingSenderId: "919934927022",
+  appId: "1:919934927022:web:30fc115c6b90a36c43ed3f"
+};
 const firebaseConfig=FILE_CFG.apiKey?FILE_CFG:JSON.parse(localStorage.getItem("nxcfg")||"{}");
 const DEMO=!(firebaseConfig.apiKey&&firebaseConfig.projectId);
 const ADMIN_URL="admin.html"; /* where to go after sign-in */
