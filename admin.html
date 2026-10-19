@@ -67,7 +67,7 @@ const SITE_URL="index.html"; /* URL of your live customer website, used by "View
 const DEMO=!cfgOk;
 const V='10.12.2',B='https://www.gstatic.com/firebasejs/'+V+'/';
 let FB;
-if(!DEMO){const [a,f,g]=await Promise.all([import(B+'firebase-app.js'),import(B+'firebase-firestore.js'),import(B+'firebase-storage.js')]);FB={...a,...f,...g}}
+if(!DEMO){const [a,f,g,h]=await Promise.all([import(B+'firebase-app.js'),import(B+'firebase-firestore.js'),import(B+'firebase-storage.js'),import(B+'firebase-auth.js')]);FB={...a,...f,...g,...h}}
 else{
  const store=new Map(),ts=()=>({seconds:Date.now()/1000,toDate:()=>new Date()}),rid=()=>Math.random().toString(36).slice(2,12);
  const put=(p,d,m)=>store.set(p,m&&store.has(p)?{...store.get(p),...d}:{...d});
