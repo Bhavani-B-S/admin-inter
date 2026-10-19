@@ -60,7 +60,7 @@ const firebaseConfig = {
   messagingSenderId: "919934927022",
   appId: "1:919934927022:web:30fc115c6b90a36c43ed3f"
 };
-const firebaseConfig=FILE_CFG.apiKey?FILE_CFG:JSON.parse(localStorage.getItem("nxcfg")||"{}"),cfgOk=!!(firebaseConfig.apiKey&&firebaseConfig.projectId);
+const cfgOk = !!(firebaseConfig.apiKey && firebaseConfig.projectId);
 const SITE_URL="index.html"; /* URL of your live customer website, used by "View Website" */
 
 /* ===== Firebase (live) or in-memory DEMO mode when no config is set ===== */
