@@ -209,6 +209,26 @@ const start=()=>{$('#view').href=SITE_URL;
  $('#nav').innerHTML=MENU.map(([k,l])=>`<a data-k="${k}" href="#${k}">${l}</a>`).join('');
  $('#burger').onclick=()=>$('#side').classList.toggle('open');$('#bell').onclick=()=>location.hash='enquiries';
  addEventListener('hashchange',route);route();badge()};
-start();
+
+if (DEMO) {
+  start();
+} else {
+  const auth = FB.getAuth(app);
+  let started = false;
+
+  FB.onAuthStateChanged(auth, user => {
+    if (!user || user.uid !== 'CWEeLqavZGQNXBDtOY3MOSi8Pdj2') {
+      if (user) FB.signOut(auth);
+      location.replace('index.html');
+      return;
+    }
+
+    if (!started) {
+      started = true;
+      start();
+    }
+  });
+}
+
 if(DEMO){const bn=document.createElement('div');bn.style.cssText='position:fixed;bottom:12px;left:50%;transform:translateX(-50%);background:#16213e;color:#e6c35c;border:1px solid #e6c35c55;padding:8px 14px;border-radius:999px;font:12px sans-serif;z-index:99';bn.textContent='Preview mode — sample data, changes are not saved';document.body.append(bn)}
 </script></body></html>
