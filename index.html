@@ -119,7 +119,7 @@ const firebaseConfig = {
   messagingSenderId: "919934927022",
   appId: "1:919934927022:web:30fc115c6b90a36c43ed3f"
 };
-const firebaseConfig=FILE_CFG.apiKey?FILE_CFG:JSON.parse(localStorage.getItem("nxcfg")||"{}");
+const cfgOk = !!(firebaseConfig.apiKey && firebaseConfig.projectId);
 const DEMO=!(firebaseConfig.apiKey&&firebaseConfig.projectId);
 const ADMIN_URL="admin.html"; /* where to go after sign-in */
 
